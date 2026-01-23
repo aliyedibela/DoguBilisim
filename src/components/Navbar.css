@@ -1,0 +1,154 @@
+/* --- GLOBAL KIRMIZI --- */
+:root {
+  --primary: #ef4444; /* Canlı Kırmızı */
+}
+
+.navbar {
+  height: 80px; /* Sabit yükseklik verdim, var() yerine */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: fixed; /* Sayfaya çivile */
+  top: 0;
+  z-index: 999;
+
+  /* --- DARK RED / GLASS GÖRÜNÜMÜ --- */
+  /* Koyu zemin */
+  background: rgba(10, 14, 23, 0.9); 
+  /* Buzlu Cam */
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px);
+  
+  /* ALT ÇİZGİ ARTIK KIRMIZI */
+  border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+  
+  /* Hafif Kırmızı Gölge */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* LOGO TASARIMI */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.logo-text { color: #ffffff; }
+.logo-highlight { color: var(--primary); }
+
+.logo-dot {
+  width: 8px; height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  margin-left: 5px;
+  /* KIRMIZI PARLAMA */
+  box-shadow: 0 0 15px var(--primary); 
+}
+
+/* MENÜ LİNKLERİ */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #9ca3af; /* Sönük gri */
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+
+/* HOVER EFEKTİ - KIRMIZI ÇİZGİ */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover { color: #ffffff; }
+.nav-link:hover::after { width: 100%; }
+
+/* İLETİŞİM BUTONU (KIRMIZI) */
+.nav-btn {
+  padding: 10px 30px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+/* --- MOBİL MENÜ İKONU --- */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.bar {
+  width: 25px; height: 3px;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* MOBİL GÖRÜNÜM */
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh; /* Ekranı kapla */
+    position: absolute;
+    top: 80px; /* Navbar yüksekliği kadar aşağı */
+    left: -100%; /* Gizle */
+    opacity: 0;
+    transition: all 0.5s ease;
+    background: rgba(10, 14, 23, 0.95);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(239, 68, 68, 0.2);
+    justify-content: center;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+  }
+
+  .menu-icon { display: flex; }
+}
