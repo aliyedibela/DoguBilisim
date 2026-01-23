@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Projects.css';
+import doguLogo from '../assets/icons/dogubilisim.png';
 
 const Projects = () => {
   const projects = [
@@ -10,7 +11,7 @@ const Projects = () => {
     clientName: "Atatürk Üniversitesi",
     completionYear: 2024,
     technologiesUsed: "Hikvision CCTV, IP Kamera Sistemleri, Fiber Optik, Switch & Router Altyapısı",
-    imageUrl: "https://res-console.cloudinary.com/dv2mfyajv/thumbnails/v1/image/upload/v1769205373/QUYxUWlwUFQxMXhIZEJITzJ1M3duYnliaVEzMHVmZEpfZnZtdHNu/drilldown"
+    imageUrl: doguLogo
   },
   {
     id: 4,
@@ -19,7 +20,7 @@ const Projects = () => {
     clientName: "Kurumsal Firmalar",
     completionYear: 2023,
     technologiesUsed: "Fiber Optik, Switch, Router, Firewall, Network Security",
-    imageUrl: "https://res-console.cloudinary.com/dv2mfyajv/thumbnails/v1/image/upload/v1769205373/QUYxUWlwUFQxMXhIZEJITzJ1M3duYnliaVEzMHVmZEpfZnZtdHNu/drilldown"
+    imageUrl: doguLogo
   },
   {
     id: 3,
@@ -28,7 +29,7 @@ const Projects = () => {
     clientName: "Milli Eğitim & Yurt Yönetimleri",
     completionYear: 2024,
     technologiesUsed: "Hikvision ColorVu, AcuSense, Network Altyapısı",
-    imageUrl: "https://res-console.cloudinary.com/dv2mfyajv/thumbnails/v1/image/upload/v1769205373/QUYxUWlwUFQxMXhIZEJITzJ1M3duYnliaVEzMHVmZEpfZnZtdHNu/drilldown"
+    imageUrl: doguLogo
   },
 
     {
@@ -38,7 +39,7 @@ const Projects = () => {
     clientName: "Site & Apartman Yönetimleri",
     completionYear: 2023,
     technologiesUsed: "Hikvision IP Kameralar, NVR, Mobil İzleme, UPS",
-    imageUrl: "https://res-console.cloudinary.com/dv2mfyajv/thumbnails/v1/image/upload/v1769205373/QUYxUWlwUFQxMXhIZEJITzJ1M3duYnliaVEzMHVmZEpfZnZtdHNu/drilldown"
+    imageUrl: doguLogo
   },
   {
     id: 5,
@@ -47,7 +48,7 @@ const Projects = () => {
     clientName: "Kamu & Özel Sektör",
     completionYear: 2025,
     technologiesUsed: "Hikvision DVR/NVR, Disk Yönetimi, Uzaktan İzleme",
-    imageUrl: "https://res-console.cloudinary.com/dv2mfyajv/thumbnails/v1/image/upload/v1769205373/QUYxUWlwUFQxMXhIZEJITzJ1M3duYnliaVEzMHVmZEpfZnZtdHNu/drilldown"
+    imageUrl: doguLogo
   }
   ];
 

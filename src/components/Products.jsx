@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
+import ups from '../assets/icons/dbups.png';
+import poe from '../assets/icons/dbpoe.png';
+import bullet from '../assets/icons/dbbullet.png';
+import tplink from '../assets/icons/dbtplink.png';
+import light from '../assets/icons/dblight.png';
+import nvr from '../assets/icons/dbnvrembedded.png';
+import mouse from '../assets/icons/everestmouse.png';
+import klavye from '../assets/icons/everestklavye.png';
+import kartustoner from '../assets/icons/kartustoner.png';
+import hdmi from '../assets/icons/hdmi.png';
+import toner from '../assets/icons/toner.png';
+import colorvu from '../assets/icons/colorvu.png';
 
 const Products = () => {
   const products = [
@@ -9,7 +21,7 @@ const Products = () => {
       name: "Hikvision ColorVu Bullet Kamera",
       description: "ColorVu teknolojisi sayesinde gece ve düşük ışık koşullarında dahi renkli görüntü sunan profesyonel IP güvenlik kamerası. Apartman, site ve kampüs güvenliği için ideal çözüm.",
       price: 3200,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769200489/TmV3X1Byb2plY3RfZjNtMnZp/drilldown",
+      imageUrl:colorvu,
       demoUrl: ""
     },
     {
@@ -17,7 +29,7 @@ const Products = () => {
       name: "Hikvision Smart Hybrid Light Bullet Kamera",
       description: "Akıllı Hybrid Light teknolojisi ile ortama göre beyaz ışık ve IR arasında otomatik geçiş yapabilen dış mekan IP kamera. Okul, yurt ve bina çevre güvenliği için yüksek performans.",
       price: 2800,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769201161/TmV3X1Byb2plY3RfN19kY2Fpem4=/drilldown",
+      imageUrl: bullet,
       demoUrl: ""
     },
     {
@@ -25,7 +37,7 @@ const Products = () => {
       name: "Hikvision Smart Hybrid Light Dome Kamera",
       description: "Vandal dayanımlı dome tasarımı ve Smart Hybrid Light özelliği ile iç mekanlar için güvenli ve estetik kamera çözümü.",
       price: 2600,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769201627/TmV3X1Byb2plY3RfMTFfaTdneXRp/drilldown",
+      imageUrl: light,
       demoUrl: ""
     },
     {
@@ -33,7 +45,7 @@ const Products = () => {
       name: "AI PoE Switch – Smart PoE Yönetimi",
       description: "IP kamera ve network cihazları için özel olarak tasarlanmış AI destekli PoE switch.",
       price: 4200,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769201303/TmV3X1Byb2plY3RfOF9tbnZtYWw=/drilldown",
+      imageUrl: poe,
       demoUrl: ""
     },
     {
@@ -41,7 +53,7 @@ const Products = () => {
       name: "Hikvision UPS Güç Kaynağı",
       description: "Elektrik kesintilerinde kamera ve kayıt cihazlarının çalışmasını sürdüren yüksek kapasiteli UPS çözümleri.",
       price: 3500,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769201943/TmV3X1Byb2plY3RfMTNfYzVibmZy/drilldown",
+      imageUrl: ups,
       demoUrl: ""
     },
     {
@@ -49,7 +61,7 @@ const Products = () => {
       name: "Everest Kablosuz Klavye & Mouse Seti",
       description: "Kablosuz, TR Q klavye ve mouse seti.",
       price: 650,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769200920/TmV3X1Byb2plY3RfNV9oa3VneGo=/drilldown",
+      imageUrl: klavye,
       demoUrl: ""
     },
     {
@@ -57,7 +69,7 @@ const Products = () => {
       name: "Everest Kablosuz Mouse",
       description: "Ergonomik, kablosuz mouse.",
       price: 350,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769201051/TmV3X1Byb2plY3RfNl9vYXMxa2Y=/drilldown",
+      imageUrl: mouse,
       demoUrl: ""
     },
     {
@@ -65,7 +77,7 @@ const Products = () => {
       name: "Hikvision Embedded NVR DS-7600 Serisi",
       description: "IP kamera sistemleri için profesyonel kayıt cihazı.",
       price: 7200,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769201557/TmV3X1Byb2plY3RfMTBfc3M4NDk4/drilldown",
+      imageUrl: nvr,
       demoUrl: ""
     },
     {
@@ -73,7 +85,7 @@ const Products = () => {
       name: "HDMI 4K Kablo",
       description: "4K Ultra HD destekli HDMI kablo.",
       price: 180,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769200736/TmV3X1Byb2plY3RfM191YWxidTg=/drilldown",
+      imageUrl:hdmi,
       demoUrl: ""
     },
     {
@@ -81,7 +93,7 @@ const Products = () => {
       name: "TP-Link 300 Mbps Kablosuz Router",
       description: "Ev ve küçük ofisler için router.",
       price: 1100,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769201739/TmV3X1Byb2plY3RfMTJfdGR6Y2ds/drilldown",
+      imageUrl:tplink,
       demoUrl: ""
     },
     {
@@ -89,7 +101,7 @@ const Products = () => {
       name: "Canon Pixma 490 Mürekkep Kartuş",
       description: "Canon Pixma yazıcılar ile uyumlu kartuş.",
       price: 750,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769200809/TmV3X1Byb2plY3RfNF9zdGtrbjA=/drilldown",
+      imageUrl: kartustoner,
       demoUrl: ""
     },
     {
@@ -97,7 +109,7 @@ const Products = () => {
       name: "Epson Refill Ink 103",
       description: "Epson EcoTank uyumlu orijinal mürekkep.",
       price: 480,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769200809/TmV3X1Byb2plY3RfNF9zdGtrbjA=/drilldown",
+      imageUrl: kartustoner,
       demoUrl: ""
     },
     {
@@ -105,7 +117,7 @@ const Products = () => {
       name: "TN-1040 Muadil Toner",
       description: "Brother uyumlu muadil toner.",
       price: 620,
-      imageUrl: "https://res-console.cloudinary.com/dg49av90b/thumbnails/v1/image/upload/v1769200585/TmV3X1Byb2plY3RfMV9hbDF4bGc=/drilldown",
+      imageUrl: toner,
       demoUrl: ""
     }
   ];
