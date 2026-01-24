@@ -9,12 +9,15 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
 
-        <Link to="/" className="nav-logo">
-          <span className="logo-text">DOĞU</span>
-          <span className="logo-highlight">BİLİŞİM</span>
-          <div className="logo-dot"></div>
-        </Link>
+       <Link to="/" className="nav-logo">
 
+  <div className="logo-main-row">
+    <span className="logo-text">DOĞU</span>
+    <span className="logo-highlight">BİLİŞİM</span>
+  </div>
+
+  <span className="logo-signature">Ümit Güloğlu</span>
+</Link>
         {/* Hamburger Menü İkonu (Mobilde Lazım Olursa) */}
         <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
           <span className={isOpen ? "bar open" : "bar"}></span>

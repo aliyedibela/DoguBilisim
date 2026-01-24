@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
+
+// İKONLARIN (Yolları senin projene göre aynı bıraktım)
 import ups from '../assets/icons/dbups.png';
 import poe from '../assets/icons/dbpoe.png';
 import bullet from '../assets/icons/dbbullet.png';
@@ -11,133 +13,197 @@ import mouse from '../assets/icons/everestmouse.png';
 import klavye from '../assets/icons/everestklavye.png';
 import kartustoner from '../assets/icons/kartustoner.png';
 import hdmi from '../assets/icons/hdmi.png';
-import toner from '../assets/icons/toner.png';
+import refill from '../assets/icons/refillink.png';
+import tn1040 from '../assets/icons/tn1040.png';
+import fdn432 from '../assets/icons/fdn432.png';
+import kyocera from '../assets/icons/kyocera.png';
+import toner85 from '../assets/icons/toner85.png';
+import hpAio from '../assets/icons/allinone.png';
+import ssd from '../assets/icons/ssd.png';
 import colorvu from '../assets/icons/colorvu.png';
 
 const Products = () => {
+  // KATEGORİLERİ BELİRLİYORUZ
+  const categories = [
+    { id: 'all', name: 'TÜM ÜRÜNLER' },
+    { id: 'security', name: 'GÜVENLİK & KAMERA' },
+    { id: 'network', name: 'NETWORK & ALTYAPI' },
+    { id: 'printer', name: 'YAZICI & SARF' },
+    { id: 'pc', name: 'BİLGİSAYAR & DONANIM' },
+  ];
+
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // ÜRÜN LİSTESİ (Category ekledim ve ID çakışmalarını düzelttim)
   const products = [
+    // --- GÜVENLİK ---
     {
       id: 1,
+      category: 'security',
       name: "Hikvision ColorVu Bullet Kamera",
-      description: "ColorVu teknolojisi sayesinde gece ve düşük ışık koşullarında dahi renkli görüntü sunan profesyonel IP güvenlik kamerası. Apartman, site ve kampüs güvenliği için ideal çözüm.",
+      description: "ColorVu teknolojisi sayesinde gece ve düşük ışık koşullarında dahi renkli görüntü sunan profesyonel IP güvenlik kamerası.",
       price: 3200,
-      imageUrl:colorvu,
-      demoUrl: ""
+      imageUrl: colorvu,
     },
     {
       id: 2,
-      name: "Hikvision Smart Hybrid Light Bullet Kamera",
-      description: "Akıllı Hybrid Light teknolojisi ile ortama göre beyaz ışık ve IR arasında otomatik geçiş yapabilen dış mekan IP kamera. Okul, yurt ve bina çevre güvenliği için yüksek performans.",
+      category: 'security',
+      name: "Hikvision Smart Hybrid Light Bullet",
+      description: "Akıllı Hybrid Light teknolojisi ile ortama göre beyaz ışık ve IR arasında otomatik geçiş yapabilen dış mekan IP kamera.",
       price: 2800,
       imageUrl: bullet,
-      demoUrl: ""
     },
     {
       id: 3,
-      name: "Hikvision Smart Hybrid Light Dome Kamera",
+      category: 'security',
+      name: "Hikvision Smart Hybrid Light Dome",
       description: "Vandal dayanımlı dome tasarımı ve Smart Hybrid Light özelliği ile iç mekanlar için güvenli ve estetik kamera çözümü.",
       price: 2600,
       imageUrl: light,
-      demoUrl: ""
     },
     {
+      id: 13,
+      category: 'security',
+      name: "Hikvision Embedded NVR Kayıt Cihazı",
+      description: "IP kamera sistemleri için profesyonel, yüksek bant genişliğine sahip ağ kayıt cihazı.",
+      price: 7200,
+      imageUrl: nvr,
+    },
+
+    // --- NETWORK & ALTYAPI ---
+    {
       id: 4,
-      name: "AI PoE Switch – Smart PoE Yönetimi",
+      category: 'network',
+      name: "AI PoE Switch – Smart Yönetim",
       description: "IP kamera ve network cihazları için özel olarak tasarlanmış AI destekli PoE switch.",
       price: 4200,
       imageUrl: poe,
-      demoUrl: ""
     },
     {
       id: 5,
+      category: 'network',
       name: "Hikvision UPS Güç Kaynağı",
       description: "Elektrik kesintilerinde kamera ve kayıt cihazlarının çalışmasını sürdüren yüksek kapasiteli UPS çözümleri.",
       price: 3500,
       imageUrl: ups,
-      demoUrl: ""
-    },
-    {
-      id: 11,
-      name: "Everest Kablosuz Klavye & Mouse Seti",
-      description: "Kablosuz, TR Q klavye ve mouse seti.",
-      price: 650,
-      imageUrl: klavye,
-      demoUrl: ""
-    },
-    {
-      id: 12,
-      name: "Everest Kablosuz Mouse",
-      description: "Ergonomik, kablosuz mouse.",
-      price: 350,
-      imageUrl: mouse,
-      demoUrl: ""
-    },
-    {
-      id: 13,
-      name: "Hikvision Embedded NVR DS-7600 Serisi",
-      description: "IP kamera sistemleri için profesyonel kayıt cihazı.",
-      price: 7200,
-      imageUrl: nvr,
-      demoUrl: ""
     },
     {
       id: 14,
-      name: "HDMI 4K Kablo",
-      description: "4K Ultra HD destekli HDMI kablo.",
+      category: 'network',
+      name: "HDMI 4K Ultra HD Kablo",
+      description: "Görüntü aktarımında kayıpsız performans sunan 4K destekli altın uçlu HDMI kablo.",
       price: 180,
-      imageUrl:hdmi,
-      demoUrl: ""
+      imageUrl: hdmi,
     },
     {
       id: 15,
-      name: "TP-Link 300 Mbps Kablosuz Router",
-      description: "Ev ve küçük ofisler için router.",
+      category: 'network',
+      name: "TP-Link 300 Mbps Router",
+      description: "Ev ve küçük ofisler için geniş kapsama alanı sunan kablosuz router.",
       price: 1100,
-      imageUrl:tplink,
-      demoUrl: ""
+      imageUrl: tplink,
+    },
+
+    // --- BİLGİSAYAR & DONANIM ---
+    {
+      id: 11,
+      category: 'pc',
+      name: "Everest Kablosuz Klavye & Mouse",
+      description: "Ofis kullanımı için ergonomik, uzun pil ömürlü kablosuz set.",
+      price: 650,
+      imageUrl: klavye,
     },
     {
-      id: 17,
-      name: "Canon Pixma 490 Mürekkep Kartuş",
-      description: "Canon Pixma yazıcılar ile uyumlu kartuş.",
+      id: 12,
+      category: 'pc',
+      name: "Everest Optik Mouse",
+      description: "Ele oturan tasarım, hassas optik sensörlü kablosuz mouse.",
+      price: 350,
+      imageUrl: mouse,
+    },
+    {
+      id: 25, // ID güncellendi
+      category: 'pc',
+      name: "HP All-in-One Kurumsal PC",
+      description: "Kasa kalabalığını ortadan kaldıran şık tasarım. Yüksek işlemci performansı ile ofisler için mükemmel çözüm.",
+      price: 24500,
+      imageUrl: hpAio,
+    },
+    {
+      id: 27, // ID güncellendi
+      category: 'pc',
+      name: "TwinMOS Yüksek Hızlı SSD",
+      description: "Bilgisayarınızı hızlandıran, darbelere dayanıklı 550MB/s okuma hızlı SSD disk.",
+      price: 950,
+      imageUrl: ssd,
+    },
+
+    // --- YAZICI & SARF ---
+    {
+      id: 20, // ID güncellendi
+      category: 'printer',
+      name: "Canon Pixma 490 Kartuş",
+      description: "Canon Pixma yazıcılar ile tam uyumlu orijinal mürekkep kartuşu.",
       price: 750,
       imageUrl: kartustoner,
-      demoUrl: ""
     },
     {
-      id: 18,
+      id: 21, // ID güncellendi
+      category: 'printer',
       name: "Epson Refill Ink 103",
-      description: "Epson EcoTank uyumlu orijinal mürekkep.",
+      description: "Epson EcoTank serisi için orijinal dolum mürekkebi.",
       price: 480,
-      imageUrl: kartustoner,
-      demoUrl: ""
+      imageUrl: refill,
     },
     {
-      id: 19,
+      id: 22, // ID güncellendi
+      category: 'printer',
       name: "TN-1040 Muadil Toner",
-      description: "Brother uyumlu muadil toner.",
+      description: "Brother yazıcılarla uyumlu, yüksek baskı kapasiteli muadil toner.",
       price: 620,
-      imageUrl: toner,
-      demoUrl: ""
+      imageUrl: tn1040,
+    },
+    {
+      id: 23, // ID güncellendi
+      category: 'printer',
+      name: "FDN432 HP Lazer Yazıcı",
+      description: "Ofis içi yoğun kullanıma uygun, hızlı ve çift taraflı baskı özellikli lazer yazıcı.",
+      price: 18500, 
+      imageUrl: fdn432,
+    },
+    {
+      id: 24, // ID güncellendi
+      category: 'printer',
+      name: "Kyocera 4500ix Fotokopi",
+      description: "A3/A4 baskı, tarama ve fotokopi özellikli dev kurumsal çözüm.",
+      price: 65000,
+      imageUrl: kyocera,
+    },
+    {
+      id: 26, // ID güncellendi
+      category: 'printer',
+      name: "HP 85A Lazer Toner",
+      description: "HP LaserJet serisi ile tam uyumlu, lekesiz baskı sağlayan toner.",
+      price: 450,
+      imageUrl: toner85,
     }
   ];
 
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  // FİLTRELEME MANTIĞI
+  const filteredProducts = activeCategory === 'all' 
+    ? products 
+    : products.filter(product => product.category === activeCategory);
 
-    const openModal = (product) => {
+  const openModal = (product) => {
     setSelectedProduct(product);
-
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.paddingRight = `${scrollbarWidth}px`;
-    
-
     document.body.style.overflow = 'hidden'; 
   };
 
-
   const closeModal = () => {
     setSelectedProduct(null);
-    
     document.body.style.paddingRight = '0px';
     document.body.style.overflow = 'auto'; 
   };
@@ -151,15 +217,27 @@ const Products = () => {
           İşletmenizin ihtiyaçlarına özel, kurulumu kolay ve yüksek performanslı
           paket donanım çözümlerimiz.
         </p>
+
+        {/* --- KATEGORİ TABLARI --- */}
+        <div className="category-tabs">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              className={`tab-btn ${activeCategory === cat.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat.id)}
+            >
+              {cat.name}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="products-grid">
-        {products.length > 0 ? (
-          products.map((product) => (
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
             <div key={product.id} className="product-card" onClick={() => openModal(product)}>
               <div className="product-image-box">
                 <img src={product.imageUrl} alt={product.name} />
-                {product.demoUrl && <span className="demo-badge">DEMO MEVCUT</span>}
                 <div className="overlay">
                    <button className="view-btn">İncele</button>
                 </div>
@@ -182,7 +260,7 @@ const Products = () => {
             </div>
           ))
         ) : (
-          <div className="no-data"><p>Henüz ürün eklenmemiş.</p></div>
+          <div className="no-data"><p>Bu kategoride henüz ürün bulunmuyor.</p></div>
         )}
       </div>
 
@@ -207,15 +285,12 @@ const Products = () => {
               <p className="modal-desc">{selectedProduct.description}</p>
               
               <div className="modal-actions">
-                {/* GÜNCELLENEN KISIM BURASI: 
-                   Link'e tıklandığında scroll kilidini açıp en tepeye gönderiyoruz.
-                */}
                 <Link 
                   to="/contact" 
                   className="btn-buy-modal"
                   onClick={() => {
-                    document.body.style.overflow = 'auto'; // KİLİDİ AÇ
-                    window.scrollTo(0, 0); // Sayfanın en tepesine git
+                    document.body.style.overflow = 'auto';
+                    window.scrollTo(0, 0);
                   }}
                 >
                   {selectedProduct.price ? 'Hemen Satın Al' : 'Teklif İste'}

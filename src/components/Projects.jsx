@@ -1,37 +1,40 @@
 import React, { useState } from 'react';
 import './Projects.css';
-import doguLogo from '../assets/icons/dogubilisim.png';
+import atauni from '../assets/icons/atauni.png';
+import ehee from '../assets/icons/ehee.png';
+import anmtal from '../assets/icons/anmtal.png';
+import goodyear from '../assets/icons/goodyear.png';
+import apartman from '../assets/icons/apartman.png';
 
 const Projects = () => {
   const projects = [
     {
     id: 1,
-    title: "Atatürk Üniversitesi Kampüs Kamera & Network Altyapısı",
+    title: "Atatürk Üniversitesi Gıda ve Hayvancılık Birimi Kamera & Network Altyapısı",
     description: "Atatürk Üniversitesi yerleşkelerinde bina içi ve dışı güvenlik kameraları, omurga network altyapısı, kayıt merkezleri ve uzaktan izleme sistemlerinin kurulumu ve devreye alınması.",
     clientName: "Atatürk Üniversitesi",
     completionYear: 2024,
     technologiesUsed: "Hikvision CCTV, IP Kamera Sistemleri, Fiber Optik, Switch & Router Altyapısı",
-    imageUrl: doguLogo
+    imageUrl: atauni
+  },
+    {
+    id: 5,
+    title: "Erzurum Hizmetiçi Eğitim Enstitüsü",
+    description: "Mevcut kamera sistemlerinin yenilenmesi, kayıt problemlerinin giderilmesi ve uzaktan erişim altyapısının güncellenmesi.",
+    clientName: "Kamu & Özel Sektör",
+    completionYear: 2025,
+    technologiesUsed: "Hikvision DVR/NVR, Disk Yönetimi, Uzaktan İzleme",
+    imageUrl: ehee
   },
   {
     id: 4,
-    title: "Kurumsal Network Altyapı Projeleri",
-    description: "Kurum ve işletmeler için sıfırdan network altyapısı kurulumu, kablolama, rack sistemleri, firewall ve internet erişim çözümleri.",
+    title: "Aşkale Nenehatun Mesleki ve Teknik Anadolu Lisesi",
+    description: "İlçe merkezlerinde bulunan kız ve erkek öğrenci yurtları ile liseler için iç ve dış alan güvenlik kamera sistemleri ve network altyapı çalışmaları.",
     clientName: "Kurumsal Firmalar",
     completionYear: 2023,
     technologiesUsed: "Fiber Optik, Switch, Router, Firewall, Network Security",
-    imageUrl: doguLogo
+    imageUrl: anmtal
   },
-  {
-    id: 3,
-    title: "Erzurum İlçeleri Okul & Yurt Network Altyapı Kurulumları",
-    description: "İlçe merkezlerinde bulunan kız ve erkek öğrenci yurtları ile liseler için iç ve dış alan güvenlik kamera sistemleri ve network altyapı çalışmaları.",
-    clientName: "Milli Eğitim & Yurt Yönetimleri",
-    completionYear: 2024,
-    technologiesUsed: "Hikvision ColorVu, AcuSense, Network Altyapısı",
-    imageUrl: doguLogo
-  },
-
     {
     id: 2,
     title: "Erzurum Genelinde Apartman Kamera Sistemleri",
@@ -39,16 +42,16 @@ const Projects = () => {
     clientName: "Site & Apartman Yönetimleri",
     completionYear: 2023,
     technologiesUsed: "Hikvision IP Kameralar, NVR, Mobil İzleme, UPS",
-    imageUrl: doguLogo
+    imageUrl: apartman
   },
   {
-    id: 5,
-    title: "Kamera Sistemleri Bakım & Revizyon Projeleri",
+    id: 6,
+    title: "Erzurum Goodyear Bölge Bayii",
     description: "Mevcut kamera sistemlerinin yenilenmesi, kayıt problemlerinin giderilmesi ve uzaktan erişim altyapısının güncellenmesi.",
     clientName: "Kamu & Özel Sektör",
     completionYear: 2025,
     technologiesUsed: "Hikvision DVR/NVR, Disk Yönetimi, Uzaktan İzleme",
-    imageUrl: doguLogo
+    imageUrl: goodyear
   }
   ];
 
