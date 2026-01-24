@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react" 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Contact from './components/Contact';
@@ -8,7 +9,6 @@ import Projects from './components/Projects';
 import Products from './components/Products';
 import Footer from './components/Footer';
 import './App.css';
-
 
 const Home = () => (
   <main>
@@ -30,6 +30,7 @@ function App() {
         <Route path="*" element={<div style={{paddingTop: '100px', textAlign:'center'}}>Sayfa Bulunamadı</div>} />
       </Routes>
       <Footer />
+      <Analytics /> 
     </Router>
   );
 }

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
-
-// İKONLARIN (Yolları senin projene göre aynı bıraktım)
+import { Helmet } from 'react-helmet-async';
 import ups from '../assets/icons/dbups.png';
 import poe from '../assets/icons/dbpoe.png';
 import bullet from '../assets/icons/dbbullet.png';
@@ -23,7 +22,6 @@ import ssd from '../assets/icons/ssd.png';
 import colorvu from '../assets/icons/colorvu.png';
 
 const Products = () => {
-  // KATEGORİLERİ BELİRLİYORUZ
   const categories = [
     { id: 'all', name: 'TÜM ÜRÜNLER' },
     { id: 'security', name: 'GÜVENLİK & KAMERA' },
@@ -35,7 +33,6 @@ const Products = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  // ÜRÜN LİSTESİ (Category ekledim ve ID çakışmalarını düzelttim)
   const products = [
     // --- GÜVENLİK ---
     {
@@ -123,7 +120,7 @@ const Products = () => {
       imageUrl: mouse,
     },
     {
-      id: 25, // ID güncellendi
+      id: 25, 
       category: 'pc',
       name: "HP All-in-One Kurumsal PC",
       description: "Kasa kalabalığını ortadan kaldıran şık tasarım. Yüksek işlemci performansı ile ofisler için mükemmel çözüm.",
@@ -131,7 +128,7 @@ const Products = () => {
       imageUrl: hpAio,
     },
     {
-      id: 27, // ID güncellendi
+      id: 27, 
       category: 'pc',
       name: "TwinMOS Yüksek Hızlı SSD",
       description: "Bilgisayarınızı hızlandıran, darbelere dayanıklı 550MB/s okuma hızlı SSD disk.",
@@ -141,7 +138,7 @@ const Products = () => {
 
     // --- YAZICI & SARF ---
     {
-      id: 20, // ID güncellendi
+      id: 20, 
       category: 'printer',
       name: "Canon Pixma 490 Kartuş",
       description: "Canon Pixma yazıcılar ile tam uyumlu orijinal mürekkep kartuşu.",
@@ -149,7 +146,7 @@ const Products = () => {
       imageUrl: kartustoner,
     },
     {
-      id: 21, // ID güncellendi
+      id: 21,
       category: 'printer',
       name: "Epson Refill Ink 103",
       description: "Epson EcoTank serisi için orijinal dolum mürekkebi.",
@@ -157,7 +154,7 @@ const Products = () => {
       imageUrl: refill,
     },
     {
-      id: 22, // ID güncellendi
+      id: 22, 
       category: 'printer',
       name: "TN-1040 Muadil Toner",
       description: "Brother yazıcılarla uyumlu, yüksek baskı kapasiteli muadil toner.",
@@ -165,7 +162,7 @@ const Products = () => {
       imageUrl: tn1040,
     },
     {
-      id: 23, // ID güncellendi
+      id: 23, 
       category: 'printer',
       name: "FDN432 HP Lazer Yazıcı",
       description: "Ofis içi yoğun kullanıma uygun, hızlı ve çift taraflı baskı özellikli lazer yazıcı.",
@@ -173,7 +170,7 @@ const Products = () => {
       imageUrl: fdn432,
     },
     {
-      id: 24, // ID güncellendi
+      id: 24, 
       category: 'printer',
       name: "Kyocera 4500ix Fotokopi",
       description: "A3/A4 baskı, tarama ve fotokopi özellikli dev kurumsal çözüm.",
@@ -181,7 +178,7 @@ const Products = () => {
       imageUrl: kyocera,
     },
     {
-      id: 26, // ID güncellendi
+      id: 26, 
       category: 'printer',
       name: "HP 85A Lazer Toner",
       description: "HP LaserJet serisi ile tam uyumlu, lekesiz baskı sağlayan toner.",
@@ -190,7 +187,6 @@ const Products = () => {
     }
   ];
 
-  // FİLTRELEME MANTIĞI
   const filteredProducts = activeCategory === 'all' 
     ? products 
     : products.filter(product => product.category === activeCategory);
@@ -207,10 +203,16 @@ const Products = () => {
     document.body.style.paddingRight = '0px';
     document.body.style.overflow = 'auto'; 
   };
+  
 
   return (
     <div className="products-page">
+      <Helmet>
+        <title>Ürünlerimiz - Doğu Bilişim</title>
+        <meta name="description" content="Hikvision kameralar, network ürünleri ve bilgisayar donanımları..." />
+      </Helmet>
       <div className="products-header">
+        
         <span className="subtitle">MAĞAZA & ÇÖZÜMLER</span>
         <h1 className="title">Hazır Donanım Ürünlerimiz</h1>
         <p className="description">
