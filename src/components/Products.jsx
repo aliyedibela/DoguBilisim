@@ -208,7 +208,7 @@ const Products = () => {
   return (
     <div className="products-page">
       <Helmet>
-        <title>Ürünlerimiz - Doğu Bilişim</title>
+        <title>Kalite İçin - Doğu Bilişim</title>
         <meta name="description" content="Hikvision kameralar, network ürünleri ve bilgisayar donanımları..." />
       </Helmet>
       <div className="products-header">
