@@ -84,37 +84,48 @@
   background: #dc2626;
 }
 /* OK TUŞLARI */
+/* --- HERO OKLARI (MİNİMALİST TARZ) --- */
+
+/* --- HERO OKLARI (YENİ - NET VE KİBAR) --- */
+
 .swiper-button-next, .swiper-button-prev {
-  color: #ef4444 !important; /* Oklar Kırmızı */
-  background: rgba(10, 14, 23, 0.8);
-  width: 60px !important; height: 60px !important;
-  border-radius: 50%;
-  /* Çerçeveyi de kırmızı yaptım */
-  border: 1px solid rgba(239, 68, 68, 0.3); 
-  transition: 0.3s;
+  color: #ffffff !important; /* Ok rengi BEMBEYAZ */
+  background: transparent !important; /* Kaba yuvarlak arka plan YOK */
+  border: none !important; /* Çerçeve YOK */
+  
+  width: 50px !important; /* Tıklama alanı */
+  height: 50px !important;
+  
+  /* İşte sırrı bu: Yazı gölgesi veriyoruz ki beyaz resim üstünde bile görünsün */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); 
+  
+  opacity: 0.7; /* Normalde hafif saydam (ama görünür) */
+  transition: all 0.3s ease;
+  z-index: 50; /* En üstte dursun */
 }
+
+/* Ok Simgesinin Boyutu */
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 2rem !important; /* İdeal boyut */
+  font-weight: bold;
+}
+
+/* Üzerine Gelince (Hover) */
 .swiper-button-next:hover, .swiper-button-prev:hover {
-  background: #ef4444; /* Hoverda içi dolsun */
-  color: white !important;
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
-  border-color: #ef4444;
+  color: #ef4444 !important; /* Senin kırmızın yansın */
+  opacity: 1; /* Tam parlak olsun */
+  transform: scale(1.2); /* Hafif büyüsün */
+  filter: drop-shadow(0 0 10px #ef4444); /* Neon efekti */
 }
 
-.swiper-pagination-bullet {
-  background: var(--text-dim) !important;
-  width: 12px; height: 12px;
-  opacity: 0.5;
-}
-.swiper-pagination-bullet-active {
-  background: #ef4444 !important; /* Aktif nokta kırmızı */
-  width: 30px; 
-  border-radius: 6px;
-  opacity: 1;
-  box-shadow: 0 0 10px #ef4444;
-}
-
+/* --- MOBİL AYARI --- */
+/* Mobilde de görünsün istiyorsan burayı SİLME, ama küçültüyoruz */
 @media (max-width: 768px) {
-  .slide-content h1 { font-size: 2.5rem; }
-  .slide-content p { font-size: 1.1rem; }
-  .btn-hero { padding: 12px 30px; font-size: 1rem; }
+  .swiper-button-next, .swiper-button-prev {
+    display: flex !important; /* Mobilde GİZLEME, göster */
+  }
+  
+  .swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 1.5rem !important; /* Mobilde biraz daha küçük olsun */
+  }
 }

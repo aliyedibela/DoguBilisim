@@ -325,19 +325,19 @@
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); /* Kırmızı parlama */
 }
 
-/* Mobilde butonlar taşarsa yana kaydır */
+/* --- MOBİL İÇİN KATEGORİ DÜZENİ (Products.css En Altına Ekle) --- */
 @media (max-width: 768px) {
   .category-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 10px; /* Scrollbar için yer */
+    flex-direction: column; /* Yan yana değil, alt alta diz */
+    gap: 10px; /* Aralarındaki boşluk */
     width: 100%;
-    padding-left: 20px;
+    padding: 0 10px; /* Kenarlardan hafif boşluk */
   }
-  
+
   .tab-btn {
-    white-space: nowrap; /* Yazı alt satıra inmesin */
-    flex-shrink: 0;
+    width: 100%; /* Buton ekranı kaplasın */
+    text-align: center; /* Yazı ortada dursun */
+    padding: 12px; /* Mobilde parmakla basmak kolay olsun */
+    border-radius: 12px; /* Mobilde çok yuvarlak olmasın, hafif köşeli olsun */
   }
 }
