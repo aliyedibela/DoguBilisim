@@ -269,7 +269,7 @@ const Products = () => {
       {selectedProduct && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal-btn" onClick={closeModal}>&times;</button>
+         <button className="close-modal-btn" onClick={closeModal} aria-label="Pencereyi Kapat" >&times;</button>
             <div className="modal-image">
                <img src={selectedProduct.imageUrl} alt={selectedProduct.name} />
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Parallax } from 'swiper/modules';
-import { Link } from 'react-router-dom'; // 1. Link'i ekledik
+import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/parallax';
@@ -56,8 +56,6 @@ const Hero = () => {
               <p data-swiper-parallax="-500">{slide.desc}</p>
               
               <div data-swiper-parallax="-700">
-                {/* --- BURAYI DEĞİŞTİRDİK --- */}
-                {/* Mavi butonu sildik, yerine kırmızı Link koyduk */}
                 <Link to="/projects" className="btn-hero">
                   Projeleri İncele
                 </Link>
