@@ -325,19 +325,59 @@
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); /* Kırmızı parlama */
 }
 
-/* --- MOBİL İÇİN KATEGORİ DÜZENİ (Products.css En Altına Ekle) --- */
+
 @media (max-width: 768px) {
-  .category-tabs {
-    flex-direction: column; /* Yan yana değil, alt alta diz */
-    gap: 10px; /* Aralarındaki boşluk */
+    .category-tabs {
+    flex-direction: column; 
+    gap: 10px; 
     width: 100%;
-    padding: 0 10px; /* Kenarlardan hafif boşluk */
+    padding: 0 10px; 
   }
 
   .tab-btn {
-    width: 100%; /* Buton ekranı kaplasın */
-    text-align: center; /* Yazı ortada dursun */
-    padding: 12px; /* Mobilde parmakla basmak kolay olsun */
-    border-radius: 12px; /* Mobilde çok yuvarlak olmasın, hafif köşeli olsun */
+    width: 100%; 
+    text-align: center; 
+    padding: 12px; 
+    border-radius: 12px; 
+  }
+
+  .modal-content {
+    width: 95%;
+    max-height: 80vh; 
+    margin: auto; 
+    border-radius: 12px;
+  }
+
+  .modal-image img {
+    height: 200px !important; 
+  }
+
+  .modal-body {
+    padding: 1.2rem !important; 
+  }
+
+
+  .modal-body h2 {
+    font-size: 1.5rem !important; 
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-desc {
+    font-size: 0.95rem !important; 
+    line-height: 1.4;
+  }
+
+  .close-modal-btn {
+    top: 10px !important;
+    right: 10px !important;
+    width: 35px !important; 
+    height: 35px !important;
+    background: #ef4444 !important; 
+    opacity: 0.9;
+    font-size: 1.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
   }
 }

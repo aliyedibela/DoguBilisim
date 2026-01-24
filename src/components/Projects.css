@@ -1,38 +1,28 @@
-/* --- EN ÖNEMLİ AYAR: KAYMAYI ENGELLEYEN KOD --- */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* --- KIRMIZI TEMA --- */
+
 :root {
-  --primary: #ef4444; /* Parlak Kırmızı */
+  --primary: #ef4444; 
 }
 
-/* --- SAYFA GENELİ --- */
+
 .projects-page {
   padding-top: 120px;
   padding-bottom: 80px;
   min-height: 100vh;
   width: 100%;
   color: var(--text-main);
-  
-  /* Temel Zemin */
   background-color: var(--bg-main); 
-  
   position: relative;
-  
-  /* --- BURAYI DEĞİŞTİRDİK --- */
-  /* clip-path YERİNE overflow: hidden YAZIYORUZ */
   overflow: hidden; 
   z-index: 1; 
-
-  /* İÇERİĞİ ORTALAMAK İÇİN FLEX */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-/* --- SOL ÜSTTEKİ IŞIK (PARLAK KIRMIZI) --- */
 .projects-page::before {
   content: '';
   position: absolute;
@@ -46,7 +36,6 @@
   animation: floatLight 10s ease-in-out infinite alternate; 
 }
 
-/* --- SAĞ ALTTAKİ IŞIK (KOYU BORDO) --- */
 .projects-page::after {
   content: '';
   position: absolute;
@@ -75,7 +64,6 @@
   max-width: 800px;
 }
 
-/* --- GRID YAPISI --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -90,21 +78,14 @@
   position: relative;
   z-index: 2;
 }
-
-/* --- KART TASARIMI --- */
 .project-card {
-  /* CAM EFEKTİ */
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  
   border-radius: 16px;
   overflow: hidden;
-  
-  /* Kenarlık çok ince ve parlak */
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  
   display: flex;
   flex-direction: column;
   transition: 0.4s ease;
@@ -115,7 +96,6 @@
 .project-card:hover {
   transform: translateY(-8px);
   border-color: #ef4444; 
-  /* Kırmızı Glow */
   box-shadow: 0 15px 40px -10px rgba(220, 38, 38, 0.3); 
 }
 
@@ -186,7 +166,6 @@
   flex-grow: 1; 
 }
 
-/* --- TEKNOLOJİ ETİKETLERİ --- */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -205,8 +184,6 @@
   font-weight: 600;
   border: 1px solid rgba(239, 68, 68, 0.2); 
 }
-
-/* --- MODAL (POP-UP) --- */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -325,4 +302,49 @@
   background: #ef4444;
   color: white;
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+
+@media (max-width: 768px) {
+  
+
+  .modal-content {
+    width: 95%;
+    max-height: 80vh; 
+    margin: auto; 
+    border-radius: 12px;
+  }
+
+  .modal-image img {
+    height: 200px !important; 
+  }
+
+  .modal-body {
+    padding: 1.2rem !important; 
+  }
+
+
+  .modal-body h2 {
+    font-size: 1.5rem !important; 
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-desc {
+    font-size: 0.95rem !important; 
+    line-height: 1.4;
+  }
+
+  .close-modal-btn {
+    top: 10px !important;
+    right: 10px !important;
+    width: 35px !important; 
+    height: 35px !important;
+    background: #ef4444 !important; 
+    opacity: 0.9;
+    font-size: 1.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+  }
 }
