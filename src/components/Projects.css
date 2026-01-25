@@ -216,20 +216,21 @@
 @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
 .close-modal-btn {
-  position: absolute;
-  top: 15px; right: 20px;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  display: flex; align-items: center; justify-content: center;
-  transition: 0.3s;
+  z-index: 99999 !important; /* Her şeyin üstüne çık */
+  top: 15px !important;
+  right: 15px !important;
+  background: rgba(239, 68, 68, 0.9) !important; /* Kırmızı olsun, belli olsun */
+  color: white !important;
+  width: 44px !important;
+  height: 44px !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Hafif gölge atalım belli olsun */
+  backdrop-filter: blur(5px);
 }
-.close-modal-btn:hover { background: #ef4444; transform: rotate(90deg); }
+
+.close-modal-btn:hover {
+  transform: scale(1.1) rotate(90deg) !important;
+}
+
 
 .modal-image img {
   width: 100%;
@@ -347,4 +348,90 @@
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
   }
+}
+
+/* --- CSS GÜNCELLEMESİ --- */
+
+/* Hem img hem video aynı özellikleri alsın */
+.project-image img, 
+.project-image video {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; /* Videoyu kutuya doldurur */
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+/* Hover olunca ikisi de büyüsün */
+.project-card:hover .project-image img,
+.project-card:hover .project-image video { 
+  transform: scale(1.1); 
+}
+.modal-swiper {
+  width: 100%;
+  height: auto !important; /* Sabit yükseklik YOK */
+  background: transparent; /* Arkası şeffaf */
+  border-radius: 12px;
+}
+
+/* 2. Resimler ve Video: Orijinal Boyutunu Korusun */
+.modal-slide-media,
+.modal-single-media {
+  width: 100%;
+  height: auto; /* Resmin kendi boyu neyse o */
+  max-height: 60vh; /* Ekranı taşırmasın ama sığsın */
+  object-fit: contain; /* Kesme yapmasın, olduğu gibi göstersin */
+  display: block;
+}
+
+/* 3. Video Ayarı: Resimlerle uyumlu olması için */
+video.modal-slide-media {
+  max-height: 60vh; /* Videolar genelde yataydır, çok uzamasın */
+  background: #000; /* Videonun kenarı boş kalırsa siyah olsun */
+}
+
+/* 4. Swiper Slide Hizalaması */
+.swiper-slide {
+  height: auto !important; /* Slide da içeriğe uysun */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 5. Okları Ortala (Yükseklik değişeceği için) */
+.modal-swiper .swiper-button-next,
+.modal-swiper .swiper-button-prev {
+  top: 50% !important;
+  transform: translateY(-50%) scale(0.8);
+}
+
+/* MOBİL AYARI */
+@media (max-width: 768px) {
+  .modal-slide-media,
+  .modal-single-media {
+    max-height: 50vh; /* Mobilde ekranı kaplamasın */
+  }
+}
+/* --- BUNU CSS DOSYASININ EN ALTINA YAPIŞTIR --- */
+
+.modal-content {
+  position: relative !important; /* Buton buna göre konumlanacak */
+}
+
+.close-modal-btn {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  z-index: 999999 !important; /* Her şeyin üstüne çıksın */
+  background: red !important; /* Kırmızı olsun */
+  color: white !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  font-size: 24px;
+  border: 2px solid white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
