@@ -84,7 +84,6 @@ const Products = () => {
       imageUrl: "/assets/icons/dbtplink.png",
     },
 
-    // --- BİLGİSAYAR & DONANIM ---
     {
       id: 11,
       category: 'pc',

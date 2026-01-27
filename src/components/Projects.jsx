@@ -18,7 +18,7 @@ const projects = [
       completionYear: 2024,
       technologiesUsed: "Hikvision CCTV, IP Kamera Sistemleri, Fiber Optik, Switch & Router Altyapısı",
       imageUrl: "/assets/icons/atauni.png",
-      // Bu projede galeri yok, sorun değil.
+
     },
     {
       id: 5,
@@ -28,12 +28,12 @@ const projects = [
       completionYear: 2025,
       technologiesUsed: "Hikvision DVR/NVR, Disk Yönetimi, Uzaktan İzleme",
       imageUrl: "/assets/icons/ehee.png",
-      videoUrl:"/assets/videos/eheevideo.mp4", // Ana Video (Slayt 1)
+      videoUrl:"/assets/videos/eheevideo.mp4", 
       
-      // 👇 GÜNCELLENEN KISIM BURASI
+
       gallery: [
-         "/assets/icons/ehee.png", // 1. Öğe: Resim (Düz koyabilirsin)
-         { type: 'video', src: "/assets/videos/eheevideo1.mp4" } // 2. Öğe: VİDEO (Bunu obje yaptık)
+         "/assets/icons/ehee.png", 
+         { type: 'video', src: "/assets/videos/eheevideo1.mp4" }
       ]
     },
     {
@@ -82,7 +82,6 @@ const projects = [
 
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Modal Aç
   const openModal = (project) => {
     setSelectedProject(project);
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -116,7 +115,6 @@ const projects = [
             return (
               <div key={project.id} className="project-card" onClick={() => openModal(project)}>
                 <div className="project-image">
-                  {/* EĞER VIDEOURL VARSA VİDEO OYNAT, YOKSA RESİM GÖSTER */}
                   {project.videoUrl ? (
                     <video 
                       src={project.videoUrl} 
@@ -169,7 +167,7 @@ const projects = [
               {(selectedProject.videoUrl || (selectedProject.gallery && selectedProject.gallery.length > 0)) ? (
                 
               <Swiper
-  onSwiper={setSwiperRef} // Az önce eklediğimiz ref ayarı
+  onSwiper={setSwiperRef} 
   key={selectedProject.id}
   modules={[Navigation, Pagination]}
   navigation={true}
@@ -180,7 +178,6 @@ const projects = [
   autoHeight={true}
   className="modal-swiper"
 >
-  {/* 1. ANA VİDEO (Varsa en başa gelir) */}
   {selectedProject.videoUrl && (
     <SwiperSlide>
       <video 
@@ -195,25 +192,24 @@ const projects = [
     </SwiperSlide>
   )}
 
-  {/* 2. GALERİ (KARIŞIK: HEM VİDEO HEM RESİM) */}
+
   {selectedProject.gallery && selectedProject.gallery.map((item, index) => {
-    
-    // KONTROL: Bu bir obje mi (yeni usul) yoksa düz resim mi (eski usul)?
+
     const isVideoObj = typeof item === 'object' && item.type === 'video';
     const src = typeof item === 'object' ? item.src : item;
 
     return (
       <SwiperSlide key={index}>
         {isVideoObj ? (
-          /* --- VİDEO İSE --- */
+
           <video 
             src={src} 
             controls 
             className="modal-slide-media"
-            preload="metadata" // İkinci videolar da düzgün boyutlansın
+            preload="metadata"
           />
         ) : (
-          /* --- RESİM İSE --- */
+
           <img 
             src={src} 
             alt={`Gallery ${index}`} 
@@ -225,7 +221,7 @@ const projects = [
   })}
 </Swiper>
               ) : (
-                /* Tek resim kısmı aynı */
+
                 <img src={selectedProject.imageUrl} alt={selectedProject.title} className="modal-single-media" />
               )}
             </div>
