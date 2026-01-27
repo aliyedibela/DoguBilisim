@@ -6,21 +6,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
-import atauni from '../assets/icons/atauni.png';
-import ehee from '../assets/icons/ehee.png';
-import anmtal from '../assets/icons/anmtal.png';
-import anmtal1 from '../assets/icons/anmtal1.png';
-import anmtal2 from '../assets/icons/anmtal2.png';
-import gy1 from '../assets/icons/gy1.png';
-import gy2 from '../assets/icons/gy2.png';
-import gy3 from '../assets/icons/gy3.png';
-import apartman from '../assets/icons/apartman.png';
-import apartman1 from '../assets/icons/apartman1.png';
-import apartman2 from '../assets/icons/apartman2.png';
-import eheeVideo from '../assets/videos/eheevideo.mp4';
-import eheeVideo1 from '../assets/videos/eheevideo1.mp4';
-
 const Projects = () => {
 
   const [swiperRef, setSwiperRef] = useState(null);
@@ -32,7 +17,7 @@ const projects = [
       clientName: "Atatürk Üniversitesi",
       completionYear: 2024,
       technologiesUsed: "Hikvision CCTV, IP Kamera Sistemleri, Fiber Optik, Switch & Router Altyapısı",
-      imageUrl: atauni,
+      imageUrl: "/assets/icons/atauni.png",
       // Bu projede galeri yok, sorun değil.
     },
     {
@@ -42,13 +27,13 @@ const projects = [
       clientName: "Kamu & Özel Sektör",
       completionYear: 2025,
       technologiesUsed: "Hikvision DVR/NVR, Disk Yönetimi, Uzaktan İzleme",
-      imageUrl: ehee,
-      videoUrl: eheeVideo, // Ana Video (Slayt 1)
+      imageUrl: "/assets/icons/ehee.png",
+      videoUrl:"/assets/videos/eheevideo.mp4", // Ana Video (Slayt 1)
       
       // 👇 GÜNCELLENEN KISIM BURASI
       gallery: [
-         ehee, // 1. Öğe: Resim (Düz koyabilirsin)
-         { type: 'video', src: eheeVideo1 } // 2. Öğe: VİDEO (Bunu obje yaptık)
+         "/assets/icons/ehee.png", // 1. Öğe: Resim (Düz koyabilirsin)
+         { type: 'video', src: "/assets/videos/eheevideo1.mp4" } // 2. Öğe: VİDEO (Bunu obje yaptık)
       ]
     },
     {
@@ -58,11 +43,11 @@ const projects = [
       clientName: "Kurumsal Firmalar",
       completionYear: 2023,
       technologiesUsed: "Fiber Optik, Switch, Router, Firewall, Network Security",
-      imageUrl: anmtal,
+      imageUrl: "/assets/icons/anmtal.png",
       gallery: [
-         anmtal,
-         anmtal1,
-         anmtal2
+         "/assets/icons/anmtal.png",
+         "/assets/icons/anmtal1.png",
+         "/assets/icons/anmtal2.png"
       ]
     },
     {
@@ -72,11 +57,11 @@ const projects = [
       clientName: "Site & Apartman Yönetimleri",
       completionYear: 2023,
       technologiesUsed: "Hikvision IP Kameralar, NVR, Mobil İzleme, UPS",
-      imageUrl: apartman,
+      imageUrl: "/assets/icons/apartman.png",
       gallery: [
-         apartman,
-         apartman1,
-         apartman2
+         "/assets/icons/apartman.png",
+         "/assets/icons/apartman1.png",
+         "/assets/icons/apartman2.png"
       ]
     },
     {
@@ -86,11 +71,11 @@ const projects = [
       clientName: "Kamu & Özel Sektör",
       completionYear: 2025,
       technologiesUsed: "Hikvision DVR/NVR, Disk Yönetimi, Uzaktan İzleme",
-      imageUrl: gy1,
+      imageUrl: "/assets/icons/gy1.png",
        gallery: [
-         gy1,
-         gy2,
-         gy3
+         "/assets/icons/gy1.png",
+         "/assets/icons/gy2.png",
+         "/assets/icons/gy3.png"
       ]
     }
   ];

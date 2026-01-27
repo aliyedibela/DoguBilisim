@@ -2,24 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
 import { Helmet } from 'react-helmet-async';
-import ups from '../assets/icons/dbups.png';
-import poe from '../assets/icons/dbpoe.png';
-import bullet from '../assets/icons/dbbullet.png';
-import tplink from '../assets/icons/dbtplink.png';
-import light from '../assets/icons/dblight.png';
-import nvr from '../assets/icons/dbnvrembedded.png';
-import mouse from '../assets/icons/everestmouse.png';
-import klavye from '../assets/icons/everestklavye.png';
-import kartustoner from '../assets/icons/kartustoner.png';
-import hdmi from '../assets/icons/hdmi.png';
-import refill from '../assets/icons/refillink.png';
-import tn1040 from '../assets/icons/tn1040.png';
-import fdn432 from '../assets/icons/fdn432.png';
-import kyocera from '../assets/icons/kyocera.png';
-import toner85 from '../assets/icons/toner85.png';
-import hpAio from '../assets/icons/allinone.png';
-import ssd from '../assets/icons/ssd.png';
-import colorvu from '../assets/icons/colorvu.png';
 
 const Products = () => {
   const categories = [
@@ -41,7 +23,7 @@ const Products = () => {
       name: "Hikvision ColorVu Bullet Kamera",
       description: "ColorVu teknolojisi sayesinde gece ve düşük ışık koşullarında dahi renkli görüntü sunan profesyonel IP güvenlik kamerası.",
       price: 3200,
-      imageUrl: colorvu,
+      imageUrl: "/assets/icons/colorvu.png",
     },
     {
       id: 2,
@@ -49,7 +31,7 @@ const Products = () => {
       name: "Hikvision Smart Hybrid Light Bullet",
       description: "Akıllı Hybrid Light teknolojisi ile ortama göre beyaz ışık ve IR arasında otomatik geçiş yapabilen dış mekan IP kamera.",
       price: 2800,
-      imageUrl: bullet,
+      imageUrl: "/assets/icons/dbbullet.png",
     },
     {
       id: 3,
@@ -57,7 +39,7 @@ const Products = () => {
       name: "Hikvision Smart Hybrid Light Dome",
       description: "Vandal dayanımlı dome tasarımı ve Smart Hybrid Light özelliği ile iç mekanlar için güvenli ve estetik kamera çözümü.",
       price: 2600,
-      imageUrl: light,
+      imageUrl: "/assets/icons/dblight.png",
     },
     {
       id: 13,
@@ -65,7 +47,7 @@ const Products = () => {
       name: "Hikvision Embedded NVR Kayıt Cihazı",
       description: "IP kamera sistemleri için profesyonel, yüksek bant genişliğine sahip ağ kayıt cihazı.",
       price: 7200,
-      imageUrl: nvr,
+      imageUrl: "/assets/icons/dbnvrembedded.png",
     },
 
     // --- NETWORK & ALTYAPI ---
@@ -75,7 +57,7 @@ const Products = () => {
       name: "AI PoE Switch – Smart Yönetim",
       description: "IP kamera ve network cihazları için özel olarak tasarlanmış AI destekli PoE switch.",
       price: 4200,
-      imageUrl: poe,
+      imageUrl: "/assets/icons/dbpoe.png",
     },
     {
       id: 5,
@@ -83,7 +65,7 @@ const Products = () => {
       name: "Hikvision UPS Güç Kaynağı",
       description: "Elektrik kesintilerinde kamera ve kayıt cihazlarının çalışmasını sürdüren yüksek kapasiteli UPS çözümleri.",
       price: 3500,
-      imageUrl: ups,
+      imageUrl: "/assets/icons/dbups.png",
     },
     {
       id: 14,
@@ -91,7 +73,7 @@ const Products = () => {
       name: "HDMI 4K Ultra HD Kablo",
       description: "Görüntü aktarımında kayıpsız performans sunan 4K destekli altın uçlu HDMI kablo.",
       price: 180,
-      imageUrl: hdmi,
+      imageUrl: "/assets/icons/hdmi.png",
     },
     {
       id: 15,
@@ -99,7 +81,7 @@ const Products = () => {
       name: "TP-Link 300 Mbps Router",
       description: "Ev ve küçük ofisler için geniş kapsama alanı sunan kablosuz router.",
       price: 1100,
-      imageUrl: tplink,
+      imageUrl: "/assets/icons/dbtplink.png",
     },
 
     // --- BİLGİSAYAR & DONANIM ---
@@ -109,7 +91,7 @@ const Products = () => {
       name: "Everest Kablosuz Klavye & Mouse",
       description: "Ofis kullanımı için ergonomik, uzun pil ömürlü kablosuz set.",
       price: 650,
-      imageUrl: klavye,
+      imageUrl: "/assets/icons/everestklavye.png",
     },
     {
       id: 12,
@@ -117,7 +99,7 @@ const Products = () => {
       name: "Everest Optik Mouse",
       description: "Ele oturan tasarım, hassas optik sensörlü kablosuz mouse.",
       price: 350,
-      imageUrl: mouse,
+      imageUrl: "/assets/icons/everestmouse.png",
     },
     {
       id: 25, 
@@ -125,7 +107,7 @@ const Products = () => {
       name: "HP All-in-One Kurumsal PC",
       description: "Kasa kalabalığını ortadan kaldıran şık tasarım. Yüksek işlemci performansı ile ofisler için mükemmel çözüm.",
       price: 24500,
-      imageUrl: hpAio,
+      imageUrl: "/assets/icons/allinone.png",
     },
     {
       id: 27, 
@@ -133,7 +115,7 @@ const Products = () => {
       name: "TwinMOS Yüksek Hızlı SSD",
       description: "Bilgisayarınızı hızlandıran, darbelere dayanıklı 550MB/s okuma hızlı SSD disk.",
       price: 950,
-      imageUrl: ssd,
+      imageUrl: "/assets/icons/ssd.png",
     },
 
     // --- YAZICI & SARF ---
@@ -143,7 +125,7 @@ const Products = () => {
       name: "Canon Pixma 490 Kartuş",
       description: "Canon Pixma yazıcılar ile tam uyumlu orijinal mürekkep kartuşu.",
       price: 750,
-      imageUrl: kartustoner,
+      imageUrl: "/assets/icons/kartustoner.png",
     },
     {
       id: 21,
@@ -151,7 +133,7 @@ const Products = () => {
       name: "Epson Refill Ink 103",
       description: "Epson EcoTank serisi için orijinal dolum mürekkebi.",
       price: 480,
-      imageUrl: refill,
+      imageUrl: "/assets/icons/refillink.png",
     },
     {
       id: 22, 
@@ -159,7 +141,7 @@ const Products = () => {
       name: "TN-1040 Muadil Toner",
       description: "Brother yazıcılarla uyumlu, yüksek baskı kapasiteli muadil toner.",
       price: 620,
-      imageUrl: tn1040,
+      imageUrl: "/assets/icons/tn1040.png",
     },
     {
       id: 23, 
@@ -167,7 +149,7 @@ const Products = () => {
       name: "FDN432 HP Lazer Yazıcı",
       description: "Ofis içi yoğun kullanıma uygun, hızlı ve çift taraflı baskı özellikli lazer yazıcı.",
       price: 18500, 
-      imageUrl: fdn432,
+      imageUrl: "/assets/icons/fdn432.png",
     },
     {
       id: 24, 
@@ -175,7 +157,7 @@ const Products = () => {
       name: "Kyocera 4500ix Fotokopi",
       description: "A3/A4 baskı, tarama ve fotokopi özellikli dev kurumsal çözüm.",
       price: 65000,
-      imageUrl: kyocera,
+      imageUrl: "/assets/icons/kyocera.png",
     },
     {
       id: 26, 
@@ -183,7 +165,7 @@ const Products = () => {
       name: "HP 85A Lazer Toner",
       description: "HP LaserJet serisi ile tam uyumlu, lekesiz baskı sağlayan toner.",
       price: 450,
-      imageUrl: toner85,
+      imageUrl: "/assets/icons/toner85.png",
     }
   ];
 
